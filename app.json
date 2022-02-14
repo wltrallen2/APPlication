@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./app/assets/favicon.png"
-    }
+    },
+    "description": "A personal resumé built as a mobile app using React Native",
+    "githubUrl": "https://github.com/wltrallen2/APPlication"
   }
 }
