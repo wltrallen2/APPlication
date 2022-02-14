@@ -2,7 +2,7 @@ export default [
     {
         image: require('../assets/techIcons/html-5.png'),
         title: 'HTML5',
-        category: 'Front-End',
+        category: 'Front-End Development',
         description: 'Mark-up Language',
         professionalYears: 5,
         hobbyYears: 5
@@ -10,7 +10,7 @@ export default [
     {
         image: require('../assets/techIcons/css3.png'),
         title: 'CSS3',
-        category: 'Front-End',
+        category: 'Front-End Development',
         description: 'Style Sheet Language',
         professionalYears: 5,
         hobbyYears: 5
@@ -18,7 +18,7 @@ export default [
     {
         image: require('../assets/techIcons/javascript.png'),
         title: 'Javascript',
-        category: 'Front-End/Back-End',
+        category: 'Full Stack Development',
         description: 'Scripting Language',
         professionalYears: 5,
         hobbyYears: 5
@@ -26,7 +26,7 @@ export default [
     {
         image: require('../assets/techIcons/react.png'),
         title: 'ReactJS',
-        category: 'Front-End',
+        category: 'Front-End Development',
         description: 'Javascript Library',
         professionalYears: 1,
         hobbyYears: 1
@@ -42,7 +42,7 @@ export default [
     {
         image: require('../assets/techIcons/nodejs.png'),
         title: 'NodeJS',
-        category: 'Back-End',
+        category: 'Back-End Development',
         description: 'Javascript Runtime Environment',
         professionalYears: 1,
         hobbyYears: 0
@@ -50,7 +50,7 @@ export default [
     {
         image: require('../assets/techIcons/typescript.png'),
         title: 'Typescript',
-        category: 'Front-End/Back-End',
+        category: 'Full Stack Development',
         description: 'Javascript Superset',
         professionalYears: 1,
         hobbyYears: 0
@@ -58,7 +58,7 @@ export default [
     {
         image: require('../assets/techIcons/php.png'),
         title: 'PHP',
-        category: 'Back-End',
+        category: 'Back-End Development',
         description: 'Scripting Language',
         professionalYears: 5,
         hobbyYears: 5
@@ -66,7 +66,7 @@ export default [
     {
         image: require('../assets/techIcons/sass.png'),
         title: 'SASS',
-        category: 'Front-End',
+        category: 'Front-End Development',
         description: 'Scripting Language',
         professionalYears: 1,
         hobbyYears: 0
@@ -74,7 +74,7 @@ export default [
     {
         image: require('../assets/techIcons/less.png'),
         title: 'LESS',
-        category: 'Front-End',
+        category: 'Front-End Development',
         description: 'Scripting Language',
         professionalYears: 2,
         hobbyYears: 0
@@ -90,7 +90,7 @@ export default [
     {
         image: require('../assets/techIcons/mysql.png'),
         title: 'MySQL',
-        category: 'Database',
+        category: 'Database Management',
         description: 'Relational Database Management System',
         professionalYears: 2,
         hobbyYears: 5
@@ -98,7 +98,7 @@ export default [
     {
         image: require('../assets/techIcons/oraclesql.png'),
         title: 'OracleSQL',
-        category: 'Database',
+        category: 'Database Management',
         description: 'Relational Database Management System',
         professionalYears: 0,
         hobbyYears: 1
@@ -106,7 +106,7 @@ export default [
     {
         image: require('../assets/techIcons/postgresql.png'),
         title: 'PostgreSQL',
-        category: 'Database',
+        category: 'Database Management',
         description: 'Relational Database Management System',
         professionalYears: 1,
         hobbyYears: 0

@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-import { View, StyleSheet, Text, FlatList } from "react-native";
+import { View, StyleSheet, SectionList } from "react-native";
 import { SearchBar } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import Screen from "../components/Screen";
@@ -12,14 +12,13 @@ import AppText from "../components/AppText";
 import Separator from "../components/Separator";
 import Spacer from "../components/Spacer";
 
-// TODO: Add a search bar
 // TODO: Add a sort/filter option
 
 export default function TechStackScreen() {
     const [ search, setSearch ] = useState('')
-    const [ filteredData, setFiltereData ] = useState([])
-    
-    const masterData = TechStackData.sort((a, b) => {
+    const [ filteredData, setFilteredData ] = useState([])
+
+    const handleSort = (a, b) => {
         return a.professionalYears > b.professionalYears ? -1
             : a.professionalYears < b.professionalYears ? 1
             : a.hobbyYears > b.hobbyYears ? -1
@@ -27,26 +26,28 @@ export default function TechStackScreen() {
             : a.title > b.title ? 1
             : a.title < b.title ? -1
             : 0
-    })
-
+    }
+    
     useEffect(() => {
-        setFiltereData([...masterData])
+        handleSearchFilter('')
     }, [])
 
     const handleSearchFilter = (text) => {
-        if(text) {
-            const newData = masterData.filter(tech => {
-                const itemData = [tech.title, tech.category, tech.description].join('').toUpperCase()
-                const textData = text.toUpperCase()
-                return itemData.indexOf(textData) > -1
-            })
-
-            setFiltereData([...newData])
-        } else {
-            setFiltereData([...masterData])
-        }
-
-        setSearch(text)
+        const searchText = text ?? ''
+        const newData = [ ...new Set(TechStackData.map(el => el.category)) ]
+            .sort()
+            .map(category => {
+                return {
+                    title: category,
+                    data: TechStackData.filter(el => {
+                            return el.category === category
+                                && [el.category, el.description, el.title].join('').toUpperCase().indexOf(searchText.toUpperCase()) > -1
+                        })
+                        .sort(handleSort)
+                }
+            }).filter(row => row.data.length > 0)
+        setFilteredData([...newData])
+        setSearch(searchText)
     }
 
     return (
@@ -73,14 +74,25 @@ export default function TechStackScreen() {
                 placeholder='Search Here...'
                 value={search}
                 lightTheme={true}
-                containerStyle={styles.searchBar}
+                containerStyle={styles.searchBarContainer}
+                inputContainerStyle={styles.searchBar}
+                inputStyle={styles.searchText}
             />
             <View style={styles.stackContainer}>
-                <FlatList
-                    data={filteredData}
-                    renderItem={({item}) => <TechStackListItem {...item} />}
-                    keyExtractor={tech => tech.title}
-                    ItemSeparatorComponent={() => <Spacer height={8} />}
+                <SectionList
+                    sections={filteredData}
+                    keyExtractor={(item, index) => item + index}
+                    renderItem={({ item }) => <TechStackListItem {...item} />}
+                    renderSectionHeader={({ section: { title }}) => {
+                        return (<View style={styles.sectionHeaderContainer}>
+                            <AppText style={styles.sectionHeader}>{title}</AppText>
+                        </View>)
+                    }}
+                    SectionSeparatorComponent={({ leadingItem, trailingSection}) => {
+                        return <Spacer height={!!leadingItem && !!trailingSection ? 20 : 0} />
+                    }}
+                    ItemSeparatorComponent={() => <Spacer height={10} />}
+                    stickySectionHeadersEnabled={true}
                 />
             </View>
         </Screen>
@@ -116,7 +128,27 @@ const styles = StyleSheet.create({
         marginHorizontal: 10
     },
     searchBar: {
+        backgroundColor: colors.light,
+        height: 35
+    },
+    searchBarContainer: {
         backgroundColor: 'transparent',
+        paddingHorizontal: 0
+    },
+    searchText: {
+        fontSize: 16
+    },
+    sectionHeader: {
+        fontSize: 18,
+        fontWeight: '700',
+        color: colors.purple,
+        paddingVertical: 5,
+        paddingHorizontal: 15,
+    },
+    sectionHeaderContainer: {
+        backgroundColor: colors.light,
+        borderTopRightRadius: 15,
+        borderTopLeftRadius: 15,
     },
     stackContainer: {
         flex: 1,
