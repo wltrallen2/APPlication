@@ -1,4 +1,7 @@
+import { useState, useEffect } from "react";
+
 import { View, StyleSheet, Text, FlatList } from "react-native";
+import { SearchBar } from "react-native-elements";
 import { MaterialIcons } from "@expo/vector-icons";
 import Screen from "../components/Screen";
 import TechStackListItem from "../components/TechStackListItem";
@@ -13,7 +16,10 @@ import Spacer from "../components/Spacer";
 // TODO: Add a sort/filter option
 
 export default function TechStackScreen() {
-    const data = TechStackData.sort((a, b) => {
+    const [ search, setSearch ] = useState('')
+    const [ filteredData, setFiltereData ] = useState([])
+    
+    const masterData = TechStackData.sort((a, b) => {
         return a.professionalYears > b.professionalYears ? -1
             : a.professionalYears < b.professionalYears ? 1
             : a.hobbyYears > b.hobbyYears ? -1
@@ -22,6 +28,27 @@ export default function TechStackScreen() {
             : a.title < b.title ? -1
             : 0
     })
+
+    useEffect(() => {
+        setFiltereData([...masterData])
+    }, [])
+
+    const handleSearchFilter = (text) => {
+        if(text) {
+            const newData = masterData.filter(tech => {
+                const itemData = [tech.title, tech.category, tech.description].join('').toUpperCase()
+                const textData = text.toUpperCase()
+                return itemData.indexOf(textData) > -1
+            })
+
+            setFiltereData([...newData])
+        } else {
+            setFiltereData([...masterData])
+        }
+
+        setSearch(text)
+    }
+
     return (
         <Screen style={styles.screen}>
             <View style={styles.key}>
@@ -38,9 +65,19 @@ export default function TechStackScreen() {
                     </View>
                 </View>
             </View>
+            <SearchBar
+                round
+                searchIcon={{ size: 24 }}
+                onChangeText={handleSearchFilter}
+                onClear={() => handleSearchFilter('')}
+                placeholder='Search Here...'
+                value={search}
+                lightTheme={true}
+                containerStyle={styles.searchBar}
+            />
             <View style={styles.stackContainer}>
                 <FlatList
-                    data={TechStackData}
+                    data={filteredData}
                     renderItem={({item}) => <TechStackListItem {...item} />}
                     keyExtractor={tech => tech.title}
                     ItemSeparatorComponent={() => <Spacer height={8} />}
@@ -77,6 +114,9 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'space-between',
         marginHorizontal: 10
+    },
+    searchBar: {
+        backgroundColor: 'transparent',
     },
     stackContainer: {
         flex: 1,
