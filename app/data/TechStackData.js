@@ -4,24 +4,24 @@ export default [
         title: 'HTML5',
         category: 'Front-End Development',
         description: 'Mark-up Language',
-        professionalYears: 5,
-        hobbyYears: 5
+        professionalYears: 6,
+        hobbyYears: 4
     },
     {
         image: require('../assets/techIcons/css3.png'),
         title: 'CSS3',
         category: 'Front-End Development',
         description: 'Style Sheet Language',
-        professionalYears: 5,
-        hobbyYears: 5
+        professionalYears: 6,
+        hobbyYears: 4
     },
     {
         image: require('../assets/techIcons/javascript.png'),
         title: 'Javascript',
         category: 'Full Stack Development',
         description: 'Scripting Language',
-        professionalYears: 5,
-        hobbyYears: 5
+        professionalYears: 6,
+        hobbyYears: 4
     },
     {
         image: require('../assets/techIcons/react.png'),
@@ -36,7 +36,7 @@ export default [
         title: 'React Native',
         category: 'Mobile Development',
         description: 'ReactJS Framework',
-        professionalYears: 0,
+        professionalYears: 1,
         hobbyYears: 1
     },
     {
@@ -60,8 +60,8 @@ export default [
         title: 'PHP',
         category: 'Back-End Development',
         description: 'Scripting Language',
-        professionalYears: 5,
-        hobbyYears: 5
+        professionalYears: 6,
+        hobbyYears: 4
     },
     {
         image: require('../assets/techIcons/sass.png'),
@@ -84,16 +84,16 @@ export default [
         title: 'Wordpress',
         category: 'Web Application',
         description: 'Content Management System',
-        professionalYears: 0,
-        hobbyYears: 5
+        professionalYears: 4,
+        hobbyYears: 2
     },
     {
         image: require('../assets/techIcons/mysql.png'),
         title: 'MySQL',
         category: 'Database Management',
         description: 'Relational Database Management System',
-        professionalYears: 2,
-        hobbyYears: 5
+        professionalYears: 6,
+        hobbyYears: 4
     },
     {
         image: require('../assets/techIcons/oraclesql.png'),
@@ -116,16 +116,16 @@ export default [
         title: 'Swift',
         category: 'Programming Language',
         description: 'Developed by Apple',
-        professionalYears: 0,
-        hobbyYears: 3
+        professionalYears: 2,
+        hobbyYears: 2
     },
     {
         image: require('../assets/techIcons/swiftui.png'),
         title: 'SwiftUI',
         category: 'Mobile Development',
         description: 'Swift Framework',
-        professionalYears: 0,
-        hobbyYears: 1
+        professionalYears: 2,
+        hobbyYears: 2
     },
     {
         image: require('../assets/techIcons/git.png'),
@@ -156,7 +156,7 @@ export default [
         title: 'XCode',
         category: 'Tools',
         description: 'Integrated Development Environment by Apple',
-        professionalYears: 0,
+        professionalYears: 2,
         hobbyYears: 5
     },
     {
