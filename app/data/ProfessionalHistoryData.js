@@ -1,11 +1,24 @@
 export default [
     {
+        image: require('../assets/plum-image.jpg'),
+        logo: require('../assets/plum.png'),
+        role: 'PHP/VXML Developer',
+        company: 'Plum Voice',
+        location: '(Remote) Boston, MA',
+        dates: '2022-Present',
+        details: [
+            'Within the first two weeks of employment, developed an Interactive Voice Response app as a proof-of-concept for integrating Auraya’s voice biometrics into Plum Voice’s custom Voice-XML applications',
+            'Currently building a cross-platform mobile app using React Native on Expo as a proof-of-concept for integrating voice biometrics into custom-built mobile applications for existing clients',
+            'Additional development projects over the first four weeks include Voice-XML scripts to test the implementation of new Automated Speech Recognition and Text-to-Speech engines and a minor iteration on a custom-built IVR for a national client built in PHP and Voice-XML',
+        ]
+    },
+    {
         image: require('../assets/clt.jpg'),
         logo: require('../assets/cltlogo.png'),
         role: 'Software Developer',
         company: 'Classic Learning Test',
         location: '(Remote) Annapolis, MD',
-        dates: '2020–Present',
+        dates: '2020-2022',
         details: [
             'Currently, working with one additional developer to fix bugs and add necessary features to our legacy **PHP** code while also developing a new user experience using a **ReactJS** front-end with a **NodeJS** backend',
             'Within the first two weeks of employment, updated the design of approximately 30% of the public-facing website to ensure responsiveness across various screen sizes and media platforms utilizing a software stack including **HTML5**, **CSS/LESS**, **php/CodeIgniter**, and **JavaScript/jQuery**',
@@ -30,14 +43,14 @@ export default [
     {
         image: require('../assets/syaa.jpeg'),
         logo: require('../assets/syaalogo.png'),
-        role: 'Full-Stack Web Developer (Part-Time)',
+        role: 'Web and Mobile App Developer',
         company: 'Strauss Youth\nAcademy for the Arts',
         location: 'Monroe, LA',
-        dates: '2014-2021',
+        dates: '2016-2020',
         details: [
-            'Designed and built a **mobile iOS app** and corresponding backend web app to allow parents and students to keep track of their theatre rehearsal schedule and to submit and manage rehearsal conflicts',
-            'Designed, implemented, and maintained company database utilizing **MySQL**',
-            'Designed and implemented a new public-facing website utilizing **HTML5**, **CSS3**, **PHP**, and **Wordpress**',
+            'Designed and built a mobile iOS app and corresponding backend web app to allow parents and students to keep track of their theatre rehearsal schedule and to submit and manage rehearsal conflicts',
+            'Designed, implemented, and maintained company database utilizing MySQL',
+            'Designed and implemented a new public-facing website utilizing HTML5, CSS3, PHP, and Wordpress',
             'Tested website and performed troubleshooting prior to deployment and monitored website for continuous improvement opportunities',
         ]
     },
